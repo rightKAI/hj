@@ -1,0 +1,43 @@
+.personnelCard {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  &_itemCard {
+    width: 30%;
+    margin: 0 1.2%;
+    margin-bottom: 20px;
+    &_avatar {
+      vertical-align: middle;
+    }
+    &_name {
+      color: #1c2438;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    &_extra {
+      text-align: right;
+    }
+    &_content {
+      &_info {
+        text-align: right;
+      }
+      &_title {
+        margin: 4px 0;
+      }
+      &_btns {
+        margin-top: 20px;
+      }
+    }
+  }
+  &_page {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 40px;
+  }
+}

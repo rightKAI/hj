@@ -1,0 +1,80 @@
+.wxmenu {
+  &-bg {
+    width: 375px;
+    box-shadow: 0 0 2px 1px #ddd;
+    margin: 20px auto 0;
+    img {
+      width: 100%;
+    }
+    position: relative;
+  }
+  &-btns-bg {
+    font-size: 14px;
+    padding-bottom: 2px;
+    color: #666;
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 52px;
+    justify-content: center;
+    align-items: center;
+  }
+  &-btns {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    &-child {
+      width: 100%;
+      min-height: 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px 0 #ddd;
+      border-radius: 1px;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 70px;
+      &-content {
+        position: relative;
+      }
+    }
+    &-select {
+      width: 100%;
+      height: 100%;
+      border: 2px dashed salmon;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &-del {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+      }
+    }
+  }
+  &-edit-card {
+    width: 80%;
+    margin: 20px auto 0;
+  }
+  &-save-btn {
+    margin: 20px auto 0;
+    display: block;
+    width: 80%;
+  }
+}
+
+.scale-enter-active, .scale-leave-active {
+  transition: .5s;
+  transform: scale(1);
+  transform: translateX(-50%);
+}
+.scale-enter, .scale-leave-to /* .scale-leave-active below version 2.1.8 */ {
+  transform: scale(0.6);
+  opacity: 0;
+}

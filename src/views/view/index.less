@@ -1,0 +1,89 @@
+.page-manager {
+    .left-size {
+        text-align: center;
+        .size-controll {
+            width: 260px;
+            margin-top: 20px;
+        }
+        .screen {
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 1px solid rgb(212, 212, 212);
+            transition: 0.2s ease;
+            border-radius: 4px;
+            .replaceBanner {
+                width: 100%;
+                height: 160px;
+                background: rgb(233, 233, 233);
+                text-align: center;
+                line-height: 160px;
+                color: #666;
+            }
+            .banner {
+                width: 100%;
+                height: 160px;
+            }
+        }
+    }
+    .right-size {
+        .edit-form {
+            margin-top: 20px;
+        }
+    }
+    .imgList {
+        width: 300px;
+    }
+    .iview-admin-draggable-list{
+        height: 100%;
+    }
+    .iview-admin-draggable-list li{
+        padding: 9px;
+        border: 1px solid #e7ebee;
+        border-radius: 3px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative;
+        transition: all .2s;
+        text-align: right;
+        img {
+            height: 50px;
+            float: left;
+        }
+        .btn {
+            line-height: 38px;
+        }
+    }
+    .iview-admin-draggable-list li:hover{
+        color: #87b4ee;
+        border-color: #87b4ee;
+        transition: all .2s;
+    }
+    .iview-admin-draggable-delete{
+        height: 100%;
+        position: absolute;
+        right: -8px;
+        top: 0px;
+        display: none;
+    }
+    .iview-admin-draggable-list li:hover .iview-admin-draggable-delete{
+        display: block;
+    }
+    .placeholder-style{
+        display: block !important;
+        color: transparent;
+        border-style: dashed !important;
+    }
+    .delte-item-animation{
+        opacity: 0;
+        transition: all .2s;
+    }
+    .iview-admin-draggable-list{
+        overflow: auto
+    }
+    .submit {
+        width: 200px;
+        margin: 20px 0 0 49px;
+    }
+}
+
+
