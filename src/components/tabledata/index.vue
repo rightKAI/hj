@@ -264,7 +264,7 @@ export default {
         result = await Http.post(url, require('qs').stringify(data))
       }      
       setTimeout(loading, 500)
-      if (result.errorCode > 0 ){
+      if (result.errorCode >= 0){
         this.resultData = result.data
         this.totalNum = +result.msg
         this.$router.push({query: {...this.$route.query, page}})

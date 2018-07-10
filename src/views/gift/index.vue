@@ -379,7 +379,8 @@ export default {
         price: priceAll,
         phone: this.excelData? this.excelData.toString() : '',
         goodsId: this.idArr.toString(),
-        goodsPortion: countList.toString()
+        goodsPortion: countList.toString(),
+        enterpriseId: JSON.parse(this.$cookies.get('userInfo')).id
       }
       ApipushGiftCar(data).then((res) => {
         this.giftName = ''

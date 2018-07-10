@@ -135,8 +135,8 @@
                 <div style="padding-left:20px;">
                   <Form ref="rulesSetter" inline v-for="(item,index) in memberRule.memberRuleDetails" :key="index">
                     <FormItem :label="`第${index+1}级：`" :label-width="80">
-                      <Input  v-model="item.rebateValue" placeholder="不填时默认为0元" class="item-width">
-                          <span slot="prepend">奖励金额</span>
+                      <Input  v-model="item.rebateValue" placeholder="不填时默认为0" class="item-width">
+                          <span slot="prepend">返利值</span>
                           <span slot="append" >{{unit}}</span>
                       </Input>
                     </FormItem>
@@ -188,7 +188,7 @@
         </FormItem>
         <FormItem prop="ruleId" label="选择规则">
           <Select ref="ruleSelect" @on-change="setRuleName" label-in-value v-model="rewardForm.ruleId">
-              <Option v-for="item in selectRulesList" :value="item.id" :key="item.id" :label="item.ruleName"></Option>
+              <Option v-for="(item, index) in selectRulesList" :value="item.id" v-if="index !== 1" :key="item.id" :label="item.ruleName"></Option>
           </Select>
         </FormItem>
         <FormItem prop="validity" label="选择有效期">
@@ -282,10 +282,6 @@ export default {
           key: '0'
         },
         {
-          value: '优惠券',
-          key: '1'
-        },
-        {
           value: '余额',
           key: '3'
         }
@@ -296,7 +292,7 @@ export default {
           key: '0'
         },
         {
-          value: '固定金额',
+          value: '固定值',
           key: '1'
         }
       ],
@@ -571,12 +567,16 @@ export default {
                           params.row.vipMemberRuleDetails[index].couldWinRebateView = params.row.vipMemberRuleDetails[index].couldWinRebate === 0? false : true
                         }
                         let memberRule = {...params.row}
+                        for (let index in memberRule.memberRuleDetails) {
+                          memberRule.memberRuleDetails[index].rebateValue = memberRule.memberRuleDetails[index].rebateValue? memberRule.memberRuleDetails[index].rebateValue : 0
+                        }
                         memberRule.rebateWay += ''
                         memberRule.rebateForm += ''
                         delete memberRule.createTime
                         delete memberRule.status
                         delete memberRule._index
                         delete memberRule._rowKey
+                        console.log(memberRule)
                         this.memberRule = memberRule
                         this.$nextTick(() => {
                           this.pushNewRulesShow = true
@@ -601,7 +601,7 @@ export default {
                           enterpriseId: this.enterpriseId,
                           ruleId: params.row.id
                         }
-                        const res = await ApiDeleteShopRules(data)
+                        const res = await ApiDeleteNewRebateRules(data)
                         if (res.errorCode > -1) {
                           this.$Message.success('删除成功')
                           this.$refs.awardList.updateData()
@@ -764,6 +764,10 @@ export default {
           for (let index in data.memberRuleDetails) {
             data.memberRuleDetails[index].couldWinRebate = data.memberRuleDetails[index].couldWinRebateView? 1 : 0
             data.vipMemberRuleDetails[index].couldWinRebate = data.vipMemberRuleDetails[index].couldWinRebateView? 1 : 0
+            data.vipMemberRuleDetails[index].rebateValue = data.vipMemberRuleDetails[index].rebateValue ? data.vipMemberRuleDetails[index].rebateValue : 0
+            data.memberRuleDetails[index].rebateValue = data.memberRuleDetails[index].rebateValue ? data.memberRuleDetails[index].rebateValue : 0
+            data.vipMemberRuleDetails[index].delayDay = data.vipMemberRuleDetails[index].delayDay ? data.vipMemberRuleDetails[index].delayDay : 0
+            data.memberRuleDetails[index].delayDay = data.memberRuleDetails[index].delayDay ? data.memberRuleDetails[index].delayDay : 0
             delete data.memberRuleDetails[index].couldWinRebateView
             delete data.vipMemberRuleDetails[index].couldWinRebateView
           }

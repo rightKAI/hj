@@ -6,7 +6,7 @@
   <div class="login">
     <Card class="login-card">
       <p slot="title">登录</p>
-      <!-- <p class="title">朴道良品后台管理</p> -->
+      <!-- <p class="title">黄金竹乡后台管理</p> -->
       <Form ref="form" class="form" :rules="rules" :model="formData">
         <Form-item prop="userName">
           <Input placeholder="请输入用户名" @keydown.13.native="submit('form')" v-model="formData.userName">

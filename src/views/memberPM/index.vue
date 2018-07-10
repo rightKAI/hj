@@ -51,7 +51,11 @@ data () {
         key: 'subordinateNum'
       },
       {
-        title: '二级代理返利',
+        title: '二级代理返利金额',
+        key: 'subordinateBalanceRebate'
+      },
+      {
+        title: '二级代理返利积分',
         key: 'subordinateIntegralRebate'
       },
       {
@@ -59,7 +63,11 @@ data () {
         key: 'threeLevelNum'
       },
       {
-        title: '三级代理返利',
+        title: '三级代理返利金额',
+        key: 'threeLevelBalanceRebate'
+      },
+      {
+        title: '三级代理返利积分',
         key: 'threeLevelIntegralRebate'
       },
       {

@@ -458,6 +458,7 @@ export default {
    async getCarList (page,num) {
       let data = {
         // num: this.num,
+        enterpriseId: JSON.parse(this.$cookies.get('userInfo')).id
         // page: this.pageNum
       }
       const res = await Http.post('/findByGiftOrder.json', data, {params: {page,num}})
@@ -483,7 +484,10 @@ export default {
     // 查询礼品卡
     async searchGift (searchVal, page) {
       this.isSearch = searchVal
-      let giftName = {giftName: searchVal}
+      let giftName = {
+        giftName: searchVal,
+        enterpriseId: JSON.parse(this.$cookies.get('userInfo')).id
+      }
       const res = await Http.post('/findByGiftOrder.json', giftName, {params: {page, num:this.num}})
       this.count = res.msg-0
       this.listData = res.data

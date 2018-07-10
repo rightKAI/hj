@@ -52,11 +52,11 @@ data () {
     memberTotal: 0,
     tableStatus: true,
     tablePage: 1,
-    tableNum: 7,
+    tableNum: 5,
     columns7: [
       {
         title: '会员名称',
-        key: 'name'
+        key: 'nickName'
       },
       {
         title: '联系方式',
@@ -179,24 +179,30 @@ methods: {
     let postData = {
     }
     let chooseWay = ''
-    switch (this.chooseWay) {
-      case 'name': 
-        postData.name = this.searchVal
-        break;
-      case 'orderNumber': 
-        postData.orderNumber = this.searchVal
-        break;
-      case 'userId': 
-        postData.userId = this.searchVal
-        break;
+    if (this.searchVal) {
+      switch (this.chooseWay) {
+        case 'name':
+          postData.nickName = this.searchVal
+          break;
+        case 'orderNumber': 
+          postData.orderNumber = this.searchVal
+          break;
+        case 'userId': 
+          postData.userId = this.searchVal
+          break;
+      }
     }
     this.tableStatus = true
     this.showBack = false
     let res = await ApiGetRebateRecordList(postData,data)
-    if (res.errorCode !== 1) {
+    if (res.errorCode !== 1 && 0) {
       this.$Message.error(res.msg)
       this.searchVal = ''
       this.tablePage = pageNum
+      this.tableStatus = false
+      return 
+    } else if(res.errorCode === 0) {
+      this.$Message.error('暂无该会员信息')
       this.tableStatus = false
       return 
     } else {

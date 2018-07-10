@@ -15,7 +15,7 @@ export default new Router({
           path: 'home',
           name: 'home',
           meta: {
-            title: '朴道良品商户管理系统 - 首页',
+            title: '黄金竹乡商户管理系统 - 首页',
             breadname: '首页'
           },
           component: reslove => { require(['../views/home'], reslove) }
@@ -24,7 +24,7 @@ export default new Router({
           path: 'merchant',
           name: 'merchant',
           meta: {
-            title: '朴道良品商户管理系统 - 子商户管理',
+            title: '黄金竹乡商户管理系统 - 子商户管理',
             breadname: '子商户管理'
           },
           component: reslove => { require(['../views/merchant'], reslove) }
@@ -33,7 +33,7 @@ export default new Router({
           path: 'goods',
           name: 'goods',
           meta: {
-            title: '朴道良品商户管理系统 - 商品列表',
+            title: '黄金竹乡商户管理系统 - 商品列表',
             breadname: '商品列表'
           },
           component: reslove => { require(['../views/goods'], reslove) }
@@ -42,7 +42,7 @@ export default new Router({
           path: 'goods/new_good',
           name: 'new_good',
           meta: {
-            title: '朴道良品商户管理系统 - 新增商品',
+            title: '黄金竹乡商户管理系统 - 新增商品',
             parent: 'goods',
             breadname: '新增商品'
           },
@@ -52,7 +52,7 @@ export default new Router({
           path: 'verify',
           name: 'verify',
           meta: {
-            title: '朴道良品商户管理系统 - 子商户商品审核',
+            title: '黄金竹乡商户管理系统 - 子商户商品审核',
             breadname: '子商户商品审核'
           },
           component: reslove => { require(['../views/verify'], reslove) }
@@ -61,7 +61,7 @@ export default new Router({
           path: 'shopOrder',
           name: 'shopOrder',
           meta: {
-            title: '朴道良品商户管理系统 - 商城订单管理',
+            title: '黄金竹乡商户管理系统 - 商城订单管理',
             breadname: '商城订单管理'
           },
           component: reslove => { require(['../views/shopOrder'], reslove) }
@@ -70,7 +70,7 @@ export default new Router({
           path: 'dispatchingOrder',
           name: 'dispatchingOrder',
           meta: {
-            title: '朴道良品商户管理系统 - 配送单管理',
+            title: '黄金竹乡商户管理系统 - 配送单管理',
             breadname: '配送单管理'
           },
           component: reslove => { require(['../views/dispatchingOrder'], reslove) }
@@ -79,7 +79,7 @@ export default new Router({
           path: 'accredit',
           name: 'accredit',
           meta: {
-            title: '朴道良品商户管理系统 - 人员管理',
+            title: '黄金竹乡商户管理系统 - 人员管理',
             breadname: '人员管理'
           },
           component: reslove => { require(['../views/accredit'], reslove) }
@@ -88,7 +88,7 @@ export default new Router({
           path: 'reward',
           name: 'reward',
           meta: {
-            title: '朴道良品商户管理系统 - 奖励设置',
+            title: '黄金竹乡商户管理系统 - 奖励设置',
             breadname: '奖励设置'
           },
           component: reslove => { require(['../views/reward'], reslove) }
@@ -97,7 +97,7 @@ export default new Router({
           path: 'wxconfig',
           name: 'wxconfig',
           meta: {
-            title: '朴道良品商户管理系统 - 公众号设置',
+            title: '黄金竹乡商户管理系统 - 公众号设置',
             breadname: '开发配置'
           },
           component: reslove => { require(['../views/wxconfig'], reslove) }
@@ -106,7 +106,7 @@ export default new Router({
           path: 'wxmenu',
           name: 'wxmenu',
           meta: {
-            title: '朴道良品商户管理系统 - 公众号设置',
+            title: '黄金竹乡商户管理系统 - 公众号设置',
             breadname: '菜单设置'
           },
           component: reslove => { require(['../views/wxmenu'], reslove) }
@@ -115,7 +115,7 @@ export default new Router({
           path: 'users',
           name: 'users',
           meta: {
-            title: '朴道良品商户管理系统 - 用户管理',
+            title: '黄金竹乡商户管理系统 - 用户管理',
             breadname: '用户管理'
           },
           component: reslove => { require(['../views/users'], reslove) }
@@ -124,7 +124,7 @@ export default new Router({
           path: 'statistics',
           name: 'statistics',
           meta: {
-            title: '朴道良品商户管理系统 - 统计分析',
+            title: '黄金竹乡商户管理系统 - 统计分析',
             breadname: '统计分析'
           }
         },
@@ -132,7 +132,7 @@ export default new Router({
           path: 'view',
           name: 'view',
           meta: {
-            title: '朴道良品商户管理系统 - 页面设置',
+            title: '黄金竹乡商户管理系统 - 页面设置',
             breadname: '页面设置'
           },
           component: reslove => { require(['../views/view'], reslove) }
@@ -141,7 +141,7 @@ export default new Router({
           path: 'gift',
           name: 'gift',
           meta: {
-            title: '朴道良品商户管理系统 - 礼品中心',
+            title: '黄金竹乡商户管理系统 - 礼品中心',
             breadname: '礼品中心'
           },
           component: reslove => { require(['../views/gift'], reslove) }
@@ -150,7 +150,7 @@ export default new Router({
           path: 'giftOrder',
           name: 'giftOrder',
           meta: {
-            title: '朴道良品商户管理系统 - 礼品订单',
+            title: '黄金竹乡商户管理系统 - 礼品订单',
             breadname: '礼品中心'
           },
           component: reslove => { require(['../views/giftOrder'], reslove) }
@@ -159,7 +159,7 @@ export default new Router({
           path: 'memberPM',
           name: 'memberPM',
           meta: {
-            title: '朴道良品商户管理系统 - 会员管理',
+            title: '黄金竹乡商户管理系统 - 会员管理',
             breadname: '会员管理'
           },
           component: reslove => { require(['../views/memberPM'], reslove) }
@@ -168,7 +168,7 @@ export default new Router({
           path: 'rebateRecord',
           name: 'rebateRecord',
           meta: {
-            title: '朴道良品商户管理系统 - 返利记录',
+            title: '黄金竹乡商户管理系统 - 返利记录',
             breadname: '会员管理'
           },
           component: reslove => { require(['../views/rebateRecord'], reslove) }
@@ -177,7 +177,7 @@ export default new Router({
           path: 'memberRebate',
           name: 'memberRebate',
           meta: {
-            title: '朴道良品商户管理系统 - 会员管理',
+            title: '黄金竹乡商户管理系统 - 会员管理',
             breadname: '会员返利'
           },
           component: reslove => { require(['../views/memberRebate'], reslove) }

@@ -31,7 +31,7 @@ export default {
       } else {
         host = 'cyc8.cn'
       }
-      return location.protocol + '//' + host + '/web/pdshop-m/?#/m/home?shopId=' + this.userInfo.id
+      return location.protocol + '//' + host + '/web/hjzx-m/?#/m/home?shopId=' + this.userInfo.id
     }
   },
   methods: {
